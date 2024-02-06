@@ -20,26 +20,25 @@ menuBtn.addEventListener("click",()=>{
 })
 
 
-//render news 
-function renderMain(arr){
-    let mainHTML = ''
-    for(let i = 0 ; i < arr.length ;i++){
-        if(arr[i].urlToImage){
-        mainHTML += ` <div class="card">
-                        <a href=${arr[i].url}>
-                        <img src=${arr[i].urlToImage} lazy="loading" />
-                        <h4>${arr[i].title}</h4>
-                        <div class="publishbyDate">
-                            <p>${arr[i].source.name}</p>
-                            <span>•</span>
-                            <p>${new Date(arr[i].publishedAt).toLocaleDateString()}</p>
-                        </div>
-                        <div class="desc">
-                           ${arr[i].description}
-                        </div>
-                        </a>
-                     </div>
-        `
+//To render news
+function renderMain(arr) {
+    let mainHTML = '';
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].urlToImage) {
+            mainHTML += '<div class="card">';
+            mainHTML += '<a href="' + arr[i].url + '">';
+            mainHTML += '<img src="' + arr[i].urlToImage + '" lazy="loading" />';
+            mainHTML += '<h4>' + arr[i].title + '</h4>';
+            mainHTML += '<div class="publishbyDate">';
+            mainHTML += '<p>' + arr[i].source.name + '</p>';
+            mainHTML += '<span>•</span>';
+            mainHTML += '<p>' + new Date(arr[i].publishedAt).toLocaleDateString() + '</p>';
+            mainHTML += '</div>';
+            mainHTML += '<div class="desc">';
+            mainHTML += arr[i].description;
+            mainHTML += '</div>';
+            mainHTML += '</a>';
+            mainHTML += '</div>';
         }
     }
 
